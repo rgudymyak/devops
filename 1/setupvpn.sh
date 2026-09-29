@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt update && sudo apt install -y curl gnupg ca-certificates
 curl -fsSL https://mongodb.com | \
   sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-8.0.gpg
