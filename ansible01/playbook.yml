@@ -1,0 +1,9 @@
+- name: pg install
+  hosts: centosdb
+  become: true
+  gather_facts: false
+  tasks:
+    - name: install pg db
+      ansible.builtin.command: dnf install -y postgresql postgresql-contrib
+      register: dnf_output
+      changed_when: "'Nothing to do' not in dnf_output.stdout"
